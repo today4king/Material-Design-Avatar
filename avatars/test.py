@@ -1,4 +1,4 @@
-from src.avatars import  avatars
+from avatars.avatars import  avatars
 
 j=avatars('123@123.com','Frederick')
 j.avatar_gen_img()
