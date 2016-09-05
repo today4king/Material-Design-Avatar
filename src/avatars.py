@@ -303,27 +303,29 @@ class avatars:
     def avatar_filename(self):
         c = self.avatar_name()
         bc = self.avatar_background_color()
-        return "%s_%d_%d_%d.jpg" % (c[0], bc[0], bc[1], bc[2])
+        return "%s_%d_%d_%d.png" % (c[0], bc[0], bc[1], bc[2])
 
     def avatar_gen_img(self):
         font_size = int(self.size / 10 * 6)
         pic_size = self.size
-        word_x = int((pic_size - font_size) / 2)
-        word_y = int(word_x * 0.9)
         an, is_letter = self.avatar_name()
         font = "SourceHanSansCN-Normal.ttf"
         if is_letter:
             font = "SourceCodePro-Light.ttf"
+            font_size = int(self.size / 10 * 8)
         font_file = os.path.abspath(os.path.join("fonts", font))
         pygame.init()
         f = pygame.font.Font(font_file, font_size)
         rtext = f.render(an, True, (255, 255, 255))
-        # pygame.image.save(rtext, avatar_filename(name))
+        # pygame.image.save(rtext, '%s.png' % an)
         mode = 'RGBA'
         astr = pygame.image.tostring(rtext, 'RGBA')
         circle = Image.new("RGBA", (self.size, self.size))
         word = Image.frombytes(mode, f.size(an), astr)
-        word.save("w.png")
+        word_x = int((pic_size - word.size[0]) / 2)
+        word_y = int(word_x * 0.9)
+        if is_letter:
+            word_y = int((pic_size - word.size[1]) / 2)
         draw = ImageDraw.Draw(circle)
         draw.ellipse((20, 20, 180, 180), fill=self.avatar_background_color(), outline=self.avatar_background_color())
         draw.point((100, 100), 'red')
@@ -333,5 +335,10 @@ class avatars:
         # circle = sharpness.enhance(7.0)
 
         # im.show()
-        #circle.show()
+        # circle.show()
         return circle
+
+    def save(self, dir=None):
+        im = self.avatar_gen_img()
+        path = os.path.join(dir, self.avatar_filename())
+        im.save(path)

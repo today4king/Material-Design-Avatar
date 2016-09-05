@@ -1,6 +1,13 @@
 from src.avatars import  avatars
 
-a=avatars('金昭')
-a.avatar_gen_img()
+j=avatars('123@123.com','Frederick')
+j.avatar_gen_img()
+j.save("../examples")
+k=avatars('king@123.com','George ')
+k.avatar_gen_img()
+k.save("../examples")
+w=avatars('王林')
+w.avatar_gen_img()
+w.save("../examples")
 # avatar_gen_img('tom')
-# avatar_gen_img('#￥%……金昭')
+# avatar_gen_img('#￥%……')
