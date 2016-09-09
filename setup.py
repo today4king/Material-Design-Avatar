@@ -14,9 +14,10 @@ setup(
     author_email='kerry@gewu3d.com',
     py_modules=['avatars', ],
     packages=['avatars'],
+    package_data={'avatars': ['fonts/*.ttf']},
     url='',
     license="",
-    long_description=open('README.md',encoding="utf8").read(),
+    long_description=open('README.md', encoding="utf8").read(),
     install_requires=[
     ],
     classifiers=[

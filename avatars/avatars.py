@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import os
+import os, sys
 from io import BytesIO
 from PIL import Image, ImageFont, ImageDraw, ImageEnhance
 import pygame
 import random
 import hashlib
+import pkgutil
 
 text = u"这是一段测试文本，test 123。"
 EN = "QWERTYUIOPASDFGHJKLZXCVBNM0123456789"
@@ -16,14 +17,21 @@ class avatars:
     name = None
     guid = None
     size = None
+    en_font_file_name = ''
+    zh_font_file_name = ''
+    font_dir = ''
 
-    def __init__(self, guid, name=None, size=200):
+    def __init__(self, guid, name=None, size=200, font_dir='fonts', en_font_file_name='SourceCodePro-Light.ttf',
+                 zh_font_file_name='SourceHanSansCN-Normal.ttf'):
         self.guid = guid
         if name:
             self.name = name
         else:
             self.name = self.guid
         self.size = size
+        self.en_font_file_name = en_font_file_name
+        self.zh_font_file_name = zh_font_file_name
+        self.font_dir = font_dir
 
     # return char string and is letter
     def avatar_name(self):
@@ -309,14 +317,15 @@ class avatars:
         font_size = int(self.size / 10 * 6)
         pic_size = self.size
         an, is_letter = self.avatar_name()
-        font = "SourceHanSansCN-Normal.ttf"
+        font = self.zh_font_file_name
         if is_letter:
-            font = "SourceCodePro-Light.ttf"
+            font = self.en_font_file_name
             font_size = int(self.size / 10 * 8)
-        font_file = os.path.abspath(os.path.join("fonts", font))
+
+        font_file = os.path.abspath(os.path.join(self.font_dir, font))
         pygame.init()
         f = pygame.font.Font(font_file, font_size)
-        rtext = f.render(an, True, (255, 255, 255))
+        rtext = f.render(an.upper(), True, (255, 255, 255))
         # pygame.image.save(rtext, '%s.png' % an)
         mode = 'RGBA'
         astr = pygame.image.tostring(rtext, 'RGBA')
@@ -327,7 +336,7 @@ class avatars:
         if is_letter:
             word_y = int((pic_size - word.size[1]) / 2)
         draw = ImageDraw.Draw(circle)
-        draw.ellipse((20, 20, 180, 180), fill=self.avatar_background_color(), outline=self.avatar_background_color())
+        draw.ellipse((20, 20, self.size-20, self.size-20), fill=self.avatar_background_color(), outline=self.avatar_background_color())
         draw.point((100, 100), 'red')
         r, g, b, a = word.split()
         circle.paste(word, (word_x, word_y), a)
@@ -335,7 +344,8 @@ class avatars:
         # circle = sharpness.enhance(7.0)
 
         # im.show()
-        # circle.show()
+        #circle.show()
+        #print(circle)
         return circle
 
     def save(self, dir=None):
