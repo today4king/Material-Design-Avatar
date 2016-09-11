@@ -311,7 +311,7 @@ class avatars:
     def avatar_filename(self):
         c = self.avatar_name()
         bc = self.avatar_background_color()
-        return "%s_%d_%d_%d.png" % (c[0], bc[0], bc[1], bc[2])
+        return "%s_%d_%d_%d_%d.png" % (c[0], bc[0], bc[1], bc[2], self.size)
 
     def avatar_gen_img(self):
         font_size = int(self.size / 10 * 6)
@@ -336,7 +336,8 @@ class avatars:
         if is_letter:
             word_y = int((pic_size - word.size[1]) / 2)
         draw = ImageDraw.Draw(circle)
-        draw.ellipse((20, 20, self.size-20, self.size-20), fill=self.avatar_background_color(), outline=self.avatar_background_color())
+        draw.ellipse((0, 0, self.size , self.size ),
+                     fill=self.avatar_background_color(), outline=self.avatar_background_color())
         draw.point((100, 100), 'red')
         r, g, b, a = word.split()
         circle.paste(word, (word_x, word_y), a)
@@ -344,8 +345,8 @@ class avatars:
         # circle = sharpness.enhance(7.0)
 
         # im.show()
-        #circle.show()
-        #print(circle)
+        # circle.show()
+        # print(circle)
         return circle
 
     def save(self, dir=None):
