@@ -314,13 +314,13 @@ class avatars:
         return "%s_%d_%d_%d_%d.png" % (c[0], bc[0], bc[1], bc[2], self.size)
 
     def avatar_gen_img(self):
-        font_size = int(self.size / 10 * 6)
+        font_size = int(self.size / 10 * 8)
         pic_size = self.size
         an, is_letter = self.avatar_name()
         font = self.zh_font_file_name
         if is_letter:
             font = self.en_font_file_name
-            font_size = int(self.size / 10 * 8)
+            font_size = int(self.size / 10 * 11)
 
         font_file = os.path.abspath(os.path.join(self.font_dir, font))
         pygame.init()
@@ -345,7 +345,7 @@ class avatars:
         # circle = sharpness.enhance(7.0)
 
         # im.show()
-        # circle.show()
+        circle.show()
         # print(circle)
         return circle
 
