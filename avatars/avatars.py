@@ -352,7 +352,9 @@ class avatars:
         # circle = sharpness.enhance(7.0)
 
         # im.show()
+
         # circle.show()
+
         # print(circle)
         return circle
 

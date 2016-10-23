@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5e74f77-66a4-4e3c-aaf5-d40626f8e191" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/avatars/avatars.py" afterPath="$PROJECT_DIR$/avatars/avatars.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/avatars/test.py" afterPath="$PROJECT_DIR$/avatars/test.py" />
     </list>
     <ignored path="Material-Design-Avatar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="葉_33_33_33_200.png" pinned="false" current-in-tab="true">
+      <file leaf-file-name="葉_33_33_33_200.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/葉_33_33_33_200.png">
           <provider selected="true" editor-type-id="images">
             <state />
@@ -83,14 +81,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="avatars.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="avatars.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/avatars/avatars.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="333" column="67" selection-start-line="333" selection-start-column="67" selection-end-line="333" selection-end-column="67" />
+            <state relative-caret-position="1485">
+              <caret line="354" column="0" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="0" />
               <folding>
                 <element signature="e#25#39#0" expanded="true" />
-                <element signature="e#1397#12856#0" expanded="false" />
+                <marker date="1477216971771" expanded="false" signature="1398:12855" ph="..." />
               </folding>
             </state>
           </provider>
@@ -138,8 +136,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/avatars/avatars.py" />
         <option value="$PROJECT_DIR$/avatars/test.py" />
+        <option value="$PROJECT_DIR$/avatars/avatars.py" />
       </list>
     </option>
   </component>
@@ -557,7 +555,7 @@
           <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
           <folding>
             <element signature="e#25#39#0" expanded="true" />
-            <element signature="e#1397#12856#0" expanded="false" />
+            <marker date="1477216971771" expanded="false" signature="1398:12855" ph="..." />
           </folding>
         </state>
       </provider>
@@ -627,7 +625,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#25#39#0" expanded="true" />
-            <element signature="e#1397#12856#0" expanded="false" />
+            <marker date="1477216971771" expanded="false" signature="1398:12855" ph="..." />
           </folding>
         </state>
       </provider>
@@ -690,7 +688,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#25#39#0" expanded="true" />
-            <element signature="e#1397#12856#0" expanded="false" />
+            <marker date="1477216971771" expanded="false" signature="1398:12855" ph="..." />
           </folding>
         </state>
       </provider>
@@ -817,17 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/avatars/avatars.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="333" column="67" selection-start-line="333" selection-start-column="67" selection-end-line="333" selection-end-column="67" />
-          <folding>
-            <element signature="e#25#39#0" expanded="true" />
-            <element signature="e#1397#12856#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/avatars/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -859,6 +846,17 @@
     <entry file="file://$PROJECT_DIR$/examples/葉_33_33_33_200.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/avatars/avatars.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="354" column="0" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#39#0" expanded="true" />
+            <marker date="1477216971771" expanded="false" signature="1398:12855" ph="..." />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
