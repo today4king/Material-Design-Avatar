@@ -313,6 +313,12 @@ class avatars:
         bc = self.avatar_background_color()
         return "%s_%d_%d_%d_%d.png" % (c[0], bc[0], bc[1], bc[2], self.size)
 
+    def is_light_color(self,color):
+        gray_level=color[0]*0.299+color[1]*0.587+color[2]*0.114
+        if gray_level>=192:
+            return True;
+        return False
+
     def avatar_gen_img(self):
         font_size = int(self.size / 10 * 8)
         pic_size = self.size
@@ -325,7 +331,8 @@ class avatars:
         font_file = os.path.abspath(os.path.join(self.font_dir, font))
         pygame.init()
         f = pygame.font.Font(font_file, font_size)
-        rtext = f.render(an.upper(), True, (255, 255, 255))
+        is_light=self.is_light_color(self.avatar_background_color())
+        rtext = f.render(an.upper(), True, (0,0,0) if is_light else (255, 255, 255))
         # pygame.image.save(rtext, '%s.png' % an)
         mode = 'RGBA'
         astr = pygame.image.tostring(rtext, 'RGBA')
@@ -345,7 +352,7 @@ class avatars:
         # circle = sharpness.enhance(7.0)
 
         # im.show()
-        circle.show()
+        # circle.show()
         # print(circle)
         return circle
 
