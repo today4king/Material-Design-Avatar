@@ -11,7 +11,7 @@ setup(
     version='0.1.0',
     description='Material Design Avatar',
     author='Zhao Jin',
-    author_email='kerry@gewu3d.com',
+    author_email='today4king',
     py_modules=['avatars', ],
     packages=['avatars'],
     package_data={'avatars': ['fonts/*.ttf']},
